@@ -1,0 +1,49 @@
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults              env_reset
+Defaults              mail_badpass
+Defaults              secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root        ALL=(ALL:ALL) ALL
+www-data        ALL=NOPASSWD:/sbin/shutdown
+www-data        ALL=NOPASSWD:/srv/www/pixxio-theme/cgi-bin/makeUpdate.pl
+www-data        ALL=NOPASSWD:/bin/rm
+www-data        ALL=NOPASSWD:/bin/mount
+www-data        ALL=NOPASSWD:/bin/umount
+www-data        ALL=NOPASSWD:/bin/chmod
+www-data        ALL=NOPASSWD:/bin/chown
+www-data        ALL=NOPASSWD:/usr/sbin/groupadd
+www-data        ALL=NOPASSWD:/usr/sbin/useradd
+www-data        ALL=NOPASSWD:/usr/sbin/usermod
+www-data        ALL=NOPASSWD:/usr/sbin/userdel
+www-data        ALL=NOPASSWD:/usr/bin/passwd
+www-data        ALL=NOPASSWD:/usr/bin/smbpasswd
+www-data        ALL=NOPASSWD:/usr/bin/apt-get
+www-data        ALL=NOPASSWD:/usr/bin/apt-mark
+www-data        ALL=NOPASSWD:/usr/bin/pdbedit
+
+www-data        ALL=NOPASSWD:/etc/init.d/samba
+www-data        ALL=NOPASSWD:/etc/init.d/sudo
+www-data        ALL=NOPASSWD:/etc/init.d/apache2
+www-data          ALL=NOPASSWD:/usr/bin/crontab
+
+# Allow members of group sudo to execute any command
+%sudo  ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+
