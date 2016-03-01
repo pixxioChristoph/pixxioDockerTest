@@ -1,9 +1,9 @@
-apache2.2:
-  image: myapache:basic
+apache:
+  image: httpd:2.2
   links:
     - mysql-server
   ports:
     - "80:80"
 
 mysql-server:
-  image: mysql5.5:basic
+  image: mysql:5.5
